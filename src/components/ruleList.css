@@ -14,7 +14,10 @@ li.ruleItem {
     padding: 10px;
     font-size: smaller;
 }
-
+li.ruleItem.selected {
+    background: #747474;
+    color: #FFF;
+}
 li.ruleItem:hover {
     cursor: pointer;
     background: #747474;

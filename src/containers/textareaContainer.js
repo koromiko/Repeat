@@ -14,14 +14,17 @@ class TextareaContainer extends React.Component {
     handleWordClick(selectedIndex){
         const { words } = this.state;
 
-        let updatedWords = words.map( (item, i)=>{
-            if(i===selectedIndex){
-                return [item[0], true];
-            }else{
-                return [item[0], false];
-            }
-        });
-        this.setState({words: updatedWords})
+        // let updatedWords = words.map( (item, i)=>{
+        //     if(i===selectedIndex){
+        //         return [item[0], true];
+        //     }else{
+        //         return [item[0], false];
+        //     }
+        // });
+        // this.setState({words: updatedWords})
+        var msg = new SpeechSynthesisUtterance(words[selectedIndex][0]);
+        window.speechSynthesis.speak(msg);
+        
     }
     render () {
         const {words} = this.state;

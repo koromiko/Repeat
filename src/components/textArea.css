@@ -12,7 +12,7 @@
 }
 
 .singleWord:hover{
-    background: #747474;
-    color: #FFF;
+    color: #747474;
+    border-bottom: 1px solid #747474;
     cursor: pointer;
 }
