@@ -1,0 +1,34 @@
+{
+    "re_list": [
+        {
+            "id": 1,
+            "re": "\\b(X|x)[a-z]+\\b",
+            "title": "x- → sounds like /z/ "
+        },
+        {
+            "id": 2,
+            "re": "\\b(C|c)h[^iau][^i ][a-z]*\\b|Charisma|chaotic",
+            "title": "ch- → sounds like /k/"
+        },
+        {
+            "id": 3,
+            "re": "\\b(p|P)sy[a-z]+\\b",
+            "title": "psych- → sounds like /saɪk/"
+        },
+        {
+            "id": 4,
+            "re": "\\b[A-Za-z]*(p|P)h[a-z]+\\b",
+            "title": "ph- → sounds like /f/"
+        },
+        {
+            "id": 5,
+            "re": "\\b[A-Za-z]*(c|C)(e|i|y)[^aeiou ][a-z]*\\b",
+            "title": "c + e, I, y → sounds like /s/"
+        },
+        {
+            "id": 6,
+            "re": "(\\b[A-Za-z]+o[^aeiou ]e\\b|Colemanite|coleslaw|microbes|omnivores)",
+            "title": "o_e → sound like the letter o"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+.textareaContainer {
+    width: 60%;
+    margin: 50px auto;
+    text-align: left;
+    position: absolute;
+    left: 10%;
+}
+
+.singleWord.selected {
+    background: #747474;
+    color: #FFF;
+}
+
+.singleWord:hover{
+    background: #747474;
+    color: #FFF;
+    cursor: pointer;
+}
