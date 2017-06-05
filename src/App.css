@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-header {
@@ -7,11 +7,33 @@
   height: 60px;
   padding: 20px;
   color: white;
+  text-align: center;
 }
 
 .App-intro {
   font-size: large;
 }
+
+.UserPanel {
+
+    position: absolute;
+    right: 25px;
+    top: 0;
+    line-height: 100px;
+
+}
+
+.UserPanel>a {
+    color: white;
+    text-decoration: none;
+}
+
+.UserPanel>a:hover {
+    text-decoration: none;
+    color: lightgrey;
+}
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

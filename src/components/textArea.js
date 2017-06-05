@@ -2,10 +2,11 @@ import React from 'react'
 import './textArea.css'
 class TextArea extends React.Component {
     render () {
-        const { words, onWordClick, activatedRe } = this.props;
+        const { words, onWordClick, activatedReText } = this.props;
         return (<div className='textareaContainer'>
             {words.map((item, i)=>{
-                if( activatedRe ){
+                if( activatedReText ){
+                    var activatedRe = new RegExp( activatedReText );
                     if( activatedRe.test(item[0]) ){
                         return (<span className='singleWord selected'
                                     key={'text_'+i}

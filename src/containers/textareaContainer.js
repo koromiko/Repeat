@@ -1,36 +1,33 @@
 import React from 'react'
-import textA from '../data/ta.json'
 import TextArea from '../components/textArea'
 
 class TextareaContainer extends React.Component {
-    constructor() {
+    constructor(props) {
         super();
-        this.state = {
-            words: textA.text.split(" ").map( (w, i)=>{ return [w, false] } )
-        }
         this.handleWordClick = this.handleWordClick.bind(this);
     }
 
-    handleWordClick(selectedIndex){
-        const { words } = this.state;
+    convertTextToWordLists( text ){
+        return text.split(" ").map( (w, i)=>{ return [w, false] } );
+    }
 
-        // let updatedWords = words.map( (item, i)=>{
-        //     if(i===selectedIndex){
-        //         return [item[0], true];
-        //     }else{
-        //         return [item[0], false];
-        //     }
-        // });
-        // this.setState({words: updatedWords})
-        var msg = new SpeechSynthesisUtterance(words[selectedIndex][0]);
+    handleWordClick(selectedIndex){
+
+        const { handleWordClick, wholeText } = this.props;
+        let words = this.convertTextToWordLists(wholeText);
+        let word = words[selectedIndex][0];
+        var msg = new SpeechSynthesisUtterance(word);
+        msg.lang = 'en-US';
         window.speechSynthesis.speak(msg);
-        
+
+        handleWordClick(word);
     }
     render () {
-        const {words} = this.state;
-        const { activatedRe } = this.props;
+        const { activatedReText, wholeText } = this.props;
+        let words = this.convertTextToWordLists(wholeText);
+
         return (<div>
-            <TextArea activatedRe={activatedRe} words={words} onWordClick={this.handleWordClick} />
+            <TextArea activatedReText={activatedReText} words={words} onWordClick={this.handleWordClick} />
         </div>)
     }
 }

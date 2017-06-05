@@ -1,15 +1,11 @@
 import React from 'react'
-import rules from '../data/rules'
 import RuleList from '../components/ruleList'
 
 class RulelistContainer extends React.Component {
-    constructor(){
+    constructor(props){
         super();
-        this.state = {
-            ruleList: rules.re_list.map( (item)=>{
-                return Object.assign( item, {selected: false} )
-            })
-        }
+
+
         this.handleRuleHover = this.handleRuleHover.bind(this);
         this.handleRuleSelected = this.handleRuleSelected.bind(this);
     }
@@ -19,7 +15,7 @@ class RulelistContainer extends React.Component {
     }
 
     handleRuleSelected(ruleID){
-        const { ruleList } = this.state;
+        const { ruleList } = this.props;
         const { reActivated } = this.props;
         if( ruleID ){
             let obj = ruleList.find( (x)=>{return x.id===ruleID} );
@@ -29,11 +25,12 @@ class RulelistContainer extends React.Component {
         }
     }
     render () {
-        const rulsList = rules.re_list;
+        const { activatedReText, ruleList } = this.props;
         return (<div>
-            <RuleList rulsList={rulsList}
+            <RuleList rulsList={ruleList}
                     handleRuleHover={this.handleRuleHover}
                     handleRuleSelected={this.handleRuleSelected}
+                    activatedReText={activatedReText}
                     />
         </div>)
     }

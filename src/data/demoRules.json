@@ -1,0 +1,19 @@
+{
+    "re_list": [
+        {
+            "id": 1,
+            "re": "\\b[A-Za-z]*ture\\b",
+            "title": "ture → /tʃɚ/ "
+        },
+        {
+            "id": 2,
+            "re": "\\b[a-z]+(c|t)ial\\b|Charisma|chaotic",
+            "title": "tial 或 cial → /ʃəl/"
+        },
+        {
+            "id": 3,
+            "re": "\\b[a-zA-Z]*[aeiou]mb\\b",
+            "title": "字尾mb --> CV+mb"
+        }
+    ]
+}

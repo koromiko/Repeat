@@ -1,0 +1,31 @@
+{
+"users": [
+{ "uid": "s05120108", "repeat_on": false },
+{ "uid": "s05120111", "repeat_on": true },
+{ "uid": "s05120115", "repeat_on": false },
+{ "uid": "s05120117", "repeat_on": true },
+{ "uid": "s05120137", "repeat_on": true },
+{ "uid": "s05120142", "repeat_on": true },
+{ "uid": "s05120146", "repeat_on": true },
+{ "uid": "s05120148", "repeat_on": true },
+{ "uid": "s05120201", "repeat_on": true },
+{ "uid": "s05120202", "repeat_on": false },
+{ "uid": "s05120204", "repeat_on": true },
+{ "uid": "s05120210", "repeat_on": false },
+{ "uid": "s05120212", "repeat_on": true },
+{ "uid": "s05120214", "repeat_on": false },
+{ "uid": "s05120215", "repeat_on": false },
+{ "uid": "s05120216", "repeat_on": false },
+{ "uid": "s05120218", "repeat_on": true },
+{ "uid": "s05120222", "repeat_on": false },
+{ "uid": "s05120224", "repeat_on": false },
+{ "uid": "s05120226", "repeat_on": true },
+{ "uid": "s05120241", "repeat_on": false },
+{ "uid": "s05120246", "repeat_on": true },
+{ "uid": "s04120245", "repeat_on": false },
+{ "uid": "r1011033", "repeat_on": true },
+{ "uid": "w2200059", "repeat_on": true },
+{ "uid": "w2200064", "repeat_on": false },
+{ "uid": "w2200067", "repeat_on": false }
+
+]}
