@@ -45,7 +45,7 @@ class App extends Component {
     constructor(){
         super()
         this.state = {
-            activatedReText: undefined,
+            activatedReTexts: [],
             isLoggedIn: false,
             userID: '',
             wholeText: '',
@@ -137,18 +137,33 @@ class App extends Component {
               });
           }
           if( isRepeatOn ){
-              var reHighlighted = false
+              var msg = new SpeechSynthesisUtterance(word);
+              msg.lang = 'en-US';
+
+              var voices = window.speechSynthesis.getVoices();
+
+                for( var i = 0; i < voices.length ; i++) {
+                    if(voices[i].name === 'Alex'){
+                        msg.voice = voices[i];
+                        break;
+                    }else if(voices[i].lang === 'en-US'){
+                        msg.voice = voices[i];
+                        break;
+                    }
+                }
+              window.speechSynthesis.speak(msg);
+
+              var compatableRes = [];
               for ( var rule of rules.re_list ) {
 
                   var rex = new RegExp(rule.re);
                   if (rex.test(word)){
-                      this.setState( { activatedReText: rule.re })
-                      reHighlighted = true;
+                      compatableRes.push( rule.re );
                   }
               }
-              if( !reHighlighted ){
-                  this.setState( { activatedReText: undefined })
-              }
+
+              this.setState({activatedReTexts: compatableRes })
+
           }
 
     }
@@ -171,13 +186,13 @@ class App extends Component {
     }
     activeRe(reText){
         if( reText !== undefined ){
-            this.setState( { activatedReText: reText })
+            this.setState( { activatedReTexts: [reText] })
         }else{
-            this.setState( { activatedReText: undefined })
+            this.setState( { activatedReText: [] })
         }
     }
     render() {
-        const { activatedReText, isLoggedIn, userID, ruleList, wholeText } = this.state;
+        const { activatedReTexts, isLoggedIn, userID, ruleList, wholeText } = this.state;
 
         return (
           <div className="App">
@@ -191,8 +206,8 @@ class App extends Component {
             </div>
 
             <div className="App-intro">
-              <TextareaContainer wholeText={wholeText} activatedReText={activatedReText} handleWordClick={this.handleWordClick} />
-              <RulelistContainer ruleList={ruleList} reActivated={this.activeRe} activatedReText={activatedReText} />
+              <TextareaContainer wholeText={wholeText} activatedReTexts={activatedReTexts} handleWordClick={this.handleWordClick} />
+              <RulelistContainer ruleList={ruleList} reActivated={this.activeRe} activatedReTexts={activatedReTexts} />
             </div>
           </div>
     );

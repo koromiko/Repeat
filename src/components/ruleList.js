@@ -22,12 +22,12 @@ class RuleList extends React.Component {
         }
     }
     render () {
-        const { rulsList, handleRuleHover, handleRuleSelected, activatedReText } = this.props;
-    
+        const { rulsList, handleRuleHover, handleRuleSelected, activatedReTexts } = this.props;
+
         return (<div className='ruleListContainer'>
                 {rulsList.map((item, i)=>{
                     return (<RuleItem key={'r_'+i}
-                                        selected={(activatedReText===item.re)}
+                                        selected={activatedReTexts.includes(item.re)}
                                         id={item.id}
                                         title={item.title}
                                         onMouseOver={handleRuleHover}

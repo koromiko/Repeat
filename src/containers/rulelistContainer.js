@@ -25,12 +25,12 @@ class RulelistContainer extends React.Component {
         }
     }
     render () {
-        const { activatedReText, ruleList } = this.props;
+        const { activatedReTexts, ruleList } = this.props;
         return (<div>
             <RuleList rulsList={ruleList}
                     handleRuleHover={this.handleRuleHover}
                     handleRuleSelected={this.handleRuleSelected}
-                    activatedReText={activatedReText}
+                    activatedReTexts={activatedReTexts}
                     />
         </div>)
     }

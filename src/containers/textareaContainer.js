@@ -16,18 +16,14 @@ class TextareaContainer extends React.Component {
         const { handleWordClick, wholeText } = this.props;
         let words = this.convertTextToWordLists(wholeText);
         let word = words[selectedIndex][0];
-        var msg = new SpeechSynthesisUtterance(word);
-        msg.lang = 'en-US';
-        window.speechSynthesis.speak(msg);
-
         handleWordClick(word);
     }
     render () {
-        const { activatedReText, wholeText } = this.props;
+        const { activatedReTexts, wholeText } = this.props;
         let words = this.convertTextToWordLists(wholeText);
 
         return (<div>
-            <TextArea activatedReText={activatedReText} words={words} onWordClick={this.handleWordClick} />
+            <TextArea activatedReTexts={activatedReTexts} words={words} onWordClick={this.handleWordClick} />
         </div>)
     }
 }

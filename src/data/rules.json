@@ -7,7 +7,7 @@
         },
         {
             "id": 2,
-            "re": "\\b(C|c)h[^iau][^i ][a-z]*\\b|Charisma|chaotic",
+            "re": "\\b(C|c)h[^iaue][^i ][a-z]*\\b|Charisma|chaotic",
             "title": "ch- → sounds like /k/"
         },
         {
