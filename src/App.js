@@ -58,6 +58,7 @@ class App extends Component {
         this.activeRe = this.activeRe.bind(this);
         this.handleWordClick = this.handleWordClick.bind(this);
         this.handleLoginSuccess = this.handleLoginSuccess.bind(this);
+        this.handleLogout = this.handleLogout.bind(this);
     }
 
     componentWillMount() {
@@ -168,9 +169,14 @@ class App extends Component {
 
     }
     handleLogout(){
+        var thisObj = this;
         firebase.auth().signOut().then(function() {
           // Sign-out successful.
           console.log('logout');
+          thisObj.setState({
+              activatedReTexts: []
+          });
+
         }).catch(function(error) {
           // An error happened.
           console.log(error);
